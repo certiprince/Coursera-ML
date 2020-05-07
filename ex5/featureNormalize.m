@@ -6,10 +6,10 @@ function [X_norm, mu, sigma] = featureNormalize(X)
 %   working with learning algorithms.
 
 mu = mean(X);
-X_norm = bsxfun(@minus, X, mu);
+X_norm = bsxfun(@minus, X, mu); % subtract mean from each X
 
-sigma = std(X_norm);
-X_norm = bsxfun(@rdivide, X_norm, sigma);
+sigma = std(X_norm); % standard deviation
+X_norm = bsxfun(@rdivide, X_norm, sigma); % now divide by std
 
 
 % ============================================================
