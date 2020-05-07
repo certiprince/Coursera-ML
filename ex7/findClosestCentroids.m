@@ -16,16 +16,13 @@ idx = zeros(m, 1);
 
 D = zeros(m,K);
 
-% ====================== YOUR CODE HERE ======================
-% Instructions: Go over every example, find its closest centroid, and store
-%               the index inside idx at the appropriate location.
-%               Concretely, idx(i) should contain the index of the centroid
-%               closest to example i. Hence, it should be a value in the 
-%               range 1..K
-%
-% Note: You can use a for-loop over the examples to compute this.
-%
+% Go over every example, find its closest centroid, and store
+% the index inside idx at the appropriate location.
+% Concretely, idx(i) should contain the index of the centroid
+% closest to example i. Hence, it should be a value in the 
+% range 1..K
 
+% loop over all examples
 for i = 1:K
     dist = bsxfun(@minus, X, centroids(i,:));
     D(:,i) = sum(dist.^2,2);
@@ -33,9 +30,6 @@ end
 
 [M, idx] = min(D,[],2);
 
-
-
 % =============================================================
 
 end
-
